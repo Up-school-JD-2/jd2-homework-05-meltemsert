@@ -42,15 +42,14 @@ public class Main {
             System.out.println(e.getMessage());
         } catch (InvalidSecurityCodeException e) {
             System.out.println(e.getMessage());
-        }catch (SystemNotWorkingException e) {
+        } catch (SystemNotWorkingException e) {
             System.out.println(e.getMessage());
         }
         try {
             pay();
-        }catch (SystemNotWorkingException e) {
+        } catch (SystemNotWorkingException e) {
             System.out.println(e.getMessage());
         }
-
     }
 
     private static boolean isValidExpirationDate(String month, String year) {
@@ -117,6 +116,7 @@ public class Main {
         }
         return true;
     }
+
     public static void pay() throws SystemNotWorkingException {
         int randomSayi = ((int) (Math.random() * 100) + 1);
         if (randomSayi > 75) {
@@ -124,6 +124,4 @@ public class Main {
         } else
             System.out.println("Ödeme işlemi başarılı");
     }
-
-
 }
