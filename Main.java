@@ -3,7 +3,6 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
         try {
             System.out.println("Ödeme tutarı: ");
@@ -31,9 +30,7 @@ public class Main {
                         "Güvenlik kodu 3 haneli rakamlardan oluşmalı");
             }
             System.out.println("Girilen bilgiler doğru.");
-
             pay();
-
         } catch (InvalidAmountException e) {
             System.out.println(e.getMessage());
         } catch (InvalidCardNumberException e) {
@@ -51,7 +48,6 @@ public class Main {
             System.out.println(e.getMessage());
         }
     }
-
     private static boolean isValidExpirationDate(String month, String year) {
         for (char c : month.toCharArray()) {
             if (!Character.isDigit(c)) {
@@ -76,7 +72,6 @@ public class Main {
         }
         return true;
     }
-
     private static boolean isValidPaymentAmount(String amount) {
         for (char c : amount.toCharArray()) {
             if (!Character.isDigit(c)) {
@@ -92,7 +87,6 @@ public class Main {
         }
         return true;
     }
-
     private static boolean isValidCardNumber(String number) {
         if (number.length() != 16) {
             return false;
@@ -104,7 +98,6 @@ public class Main {
         }
         return true;
     }
-
     private static boolean isValidSecurityCode(String code) {
         if (code.length() != 3) {
             return false;
@@ -116,7 +109,6 @@ public class Main {
         }
         return true;
     }
-
     public static void pay() throws SystemNotWorkingException {
         int randomSayi = ((int) (Math.random() * 100) + 1);
         if (randomSayi > 75) {
